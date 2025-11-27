@@ -32,16 +32,16 @@ A plataforma NewbyteJsf oferece funcionalidades completas para gerenciamento de 
 ## Estrutura do Projeto
 src/main/
 ├── java/com/example/ifbademo/
-│   ├── controller/           # Beans gerenciados para controle das páginas
-│   ├── model/               # Entidades JPA representando as tabelas do banco
-│   ├── repository/         # Interfaces de repositório para acesso aos dados
-│   ├── service/            # Camada de serviço contendo a lógica de negócio
-│   └── util/               # Classes utilitárias, incluindo implementação do ViewScope
+│   ├── controller/           
+│   ├── model/              
+│   ├── repository/        
+│   ├── service/           
+│   └── util/              
 ├── resources/
 │   └── application.properties # Configurações da aplicação
 └── webapp/
-├── *.xhtml              # Páginas de apresentação JSF
-└── css/                 # Arquivos de estilo
+├── *.xhtml            
+└── css/                 
 
 ## Tecnologias Utilizadas
 
