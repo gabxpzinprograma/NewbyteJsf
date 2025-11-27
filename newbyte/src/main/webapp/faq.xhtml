@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NewByte - FAQ</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="shortcut icon" href="resources/ifba/images/logo-removebg-preview.png" type="image/x-icon" />
+
+    <style>
+        @font-face {
+            font-family: "8bitOperatorPlus-Bold";
+            src: url('resources/ifba/fonts/8bitOperatorPlus-Bold.ttf') format(truetype);
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        ::marker {
+            color: #00000000;
+        }
+
+        body {
+            font-family: "8bitOperatorPlus-Bold", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #5840BB;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(20px) saturate(180%);
+            animation: fadeIn 2s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            color: #fff;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(15px);
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        details:hover {
+            transform: translateY(-3px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        summary {
+            font-size: 1.3em;
+            color: #fff;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            outline: none;
+        }
+
+        details p {
+            color: #ddd;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .parallax {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('resources/ifba/images/fundo.jpg');
+            background-attachment: fixed;
+        }
+
+        .nav__uls {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: rgb(0 0 0 / 36%);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 20px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .nav__lis {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 12px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .nav__lis:hover {
+            background: rgba(122, 74, 244, 0.3);
+            transform: translateX(8px);
+        }
+
+        .nav__lis img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0.9);
+            transition: all 0.3s;
+        }
+
+        .nav__lis:hover img {
+            filter: brightness(1.5);
+            transform: scale(1.2);
+        }
+    </style>
+</h:head>
+
+<h:body>
+
+    <!-- Navbar padrão -->
+    <ul class="nav__uls">
+        <a href="index.xhtml">
+            <li class="nav__lis"><img src="resources/ifba/images/home.png" /></li>
+        </a>
+        <a href="cursos.xhtml">
+            <li class="nav__lis"><img src="resources/ifba/images/box.png" /></li>
+        </a>
+        <a href="termos.xhtml">
+            <li class="nav__lis"><img src="resources/ifba/images/file.png" /></li>
+        </a>
+        <a href="contato.xhtml">
+            <li class="nav__lis"><img src="resources/ifba/images/phone.png" /></li>
+        </a>
+        <a href="login.xhtml">
+            <li class="nav__lis"><img src="resources/ifba/images/user.png" /></li>
+        </a>
+        <a href="faq.xhtml">
+            <li class="nav__lis"><img src="resources/ifba/images/question.png" /></li>
+        </a>
+    </ul>
+
+    <!-- Fundo parallax (opcional: coloque uma imagem bonita em resources/resources/ifba/images/background-faq.jpg) -->
+    <div class="parallax"></div>
+
+    <div class="container">
+        <section class="secao-faq">
+            <h1>Perguntas frequentes</h1>
+
+            <details>
+                <summary>Como navegar pelo site?</summary>
+                <p>Nosso site foi desenvolvido pela empresa <strong>Newbyte</strong>, te explicando de forma simples,
+                    ele está dividido em abas e você navega por elas dependendo do que você quer. Dúvidas?
+                    <span style="color:green; font-weight: bold;">Whatsapp Newbyte: 77999646021</span>
+                </p>
+            </details>
+
+            <details>
+                <summary>Como vocês gerenciam os pagamentos da Newbyte?</summary>
+                <p>Atualmente, aceitamos somente pagamentos via <strong>PIX</strong>. Qualquer solicitação de pagamento
+                    via outro método, como boleto ou cartão, deve ser desconsiderada.
+                    <span style="color: red; font-weight: bold;">Se pedirem outro tipo de pagamento, é golpe!</span>
+                    Fique atento e entre em contato caso tenha dúvidas.
+                </p>
+            </details>
+
+            <details>
+                <summary>Como realizar a inscrição/login no site?</summary>
+                <p>Para se inscrever ou fazer login, basta clicar no botão de "Login" ou "Cadastre-se" no topo da
+                    página.
+                    Você será redirecionado para um formulário simples onde poderá inserir seus dados de forma segura.
+                </p>
+            </details>
+
+            <details open="open">
+                <summary>O site é confiável?</summary>
+                <p>A todo momento nos esforçamos pra manter a sua privacidade e manter sua confiança. O site foi
+                    completamente pensado com esse objetivo. Todos os dados pessoais são criptografados em nosso banco
+                    de dados mantidos de forma segura pela <strong>Newbyte</strong>. Então em seu todo podemos dizer que
+                    a Newbyte é 99.8% segura.</p>
+            </details>
+        </section>
+    </div>
+
+    <!-- JivoChat (se ainda usar) -->
+    <script src="//code.jivosite.com/widget/vqjmQKyBjV" async="async"></script>
+</h:body>
+
+</html>
