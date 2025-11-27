@@ -70,54 +70,54 @@ src/main/
 
    # Compilar e executar a aplicação
    mvn clean spring-boot:run
-Acesso à Aplicação:
-Após a inicialização bem-sucedida, a aplicação estará disponível em:
-http://localhost:8080
-Estrutura de Banco de Dados
-O projeto utiliza um esquema de banco de dados composto pelas seguintes tabelas principais:
-
-Aluno: Armazena informações dos alunos da plataforma
-Professor: Armazena informações dos professores da plataforma
-Curso: Contém os dados dos cursos disponíveis
-Aula: Representa as aulas individuais dos cursos
-
-Funcionalidades Implementadas
-O sistema possui as seguintes funcionalidades completamente implementadas:
-
-Sistema de cadastro e login separado para alunos e professores
-Controle rigoroso de sessão garantindo apenas um tipo de usuário logado simultaneamente
-Validação de senhas com confirmação durante o cadastro
-Verificação de unicidade de e-mail para evitar cadastros duplicados
-Criptografia segura de todas as senhas utilizando BCrypt
-Navegação clara entre as diferentes áreas de aluno e professor
-
-Desenvolvimento e Estrutura do Código
-O projeto segue padrões de arquitetura em camadas, com separação clara entre:
-
-Camada de Apresentação: Gerenciada pelos beans JSF localizados no pacote controller
-Camada de Serviço: Contém a lógica de negócio e coordenação entre diferentes repositórios
-Camada de Persistência: Implementada através das interfaces de repositório Spring Data JPA
-
-Próximos Passos de Desenvolvimento
-As principais funcionalidades planejadas para implementação futura incluem:
-
-Listagem e visualização de cursos disponíveis
-Sistema de matrícula de alunos em cursos
-Controle de progresso de visualização de aulas
-Painel de gerenciamento para professores
-Sistema de upload e gerenciamento de conteúdo de aulas
-
-Contribuição
-Para contribuir com o desenvolvimento do projeto:
-
-Faça um fork do repositório
-Crie uma branch para sua funcionalidade
-Implemente as alterações e testes correspondentes
-Faça commit das alterações seguindo convenções claras
-Envie um pull request para revisão
-
-Licença
-Este projeto é desenvolvido como parte de um trabalho acadêmico para a disciplina de Linguagem de Programação II e está destinado ao uso educacional e desenvolvimento da plataforma Newbyte.
-
-Este README fornece uma visão completa e profissional do projeto, incluindo todas as informações necessárias para compreender sua estrutura, funcionalidades implementadas, tecnologias utilizadas e procedimentos para instalação e desenvolvimento. O documento está organizado de forma clara e estruturada, facilitando a compreensão tanto para desenvolvedores quanto para pessoas interessadas em estudar ou contribuir com o projeto.
-   
+3. **Acesso à Aplicação**:
+    Após a inicialização bem-sucedida, a aplicação estará disponível em:
+    http://localhost:8080
+    Estrutura de Banco de Dados
+    O projeto utiliza um esquema de banco de dados composto pelas seguintes tabelas principais:
+    
+    Aluno: Armazena informações dos alunos da plataforma
+    Professor: Armazena informações dos professores da plataforma
+    Curso: Contém os dados dos cursos disponíveis
+    Aula: Representa as aulas individuais dos cursos
+    
+    Funcionalidades Implementadas
+    O sistema possui as seguintes funcionalidades completamente implementadas:
+    
+    Sistema de cadastro e login separado para alunos e professores
+    Controle rigoroso de sessão garantindo apenas um tipo de usuário logado simultaneamente
+    Validação de senhas com confirmação durante o cadastro
+    Verificação de unicidade de e-mail para evitar cadastros duplicados
+    Criptografia segura de todas as senhas utilizando BCrypt
+    Navegação clara entre as diferentes áreas de aluno e professor
+    
+    Desenvolvimento e Estrutura do Código
+    O projeto segue padrões de arquitetura em camadas, com separação clara entre:
+    
+    Camada de Apresentação: Gerenciada pelos beans JSF localizados no pacote controller
+    Camada de Serviço: Contém a lógica de negócio e coordenação entre diferentes repositórios
+    Camada de Persistência: Implementada através das interfaces de repositório Spring Data JPA
+    
+    Próximos Passos de Desenvolvimento
+    As principais funcionalidades planejadas para implementação futura incluem:
+    
+    Listagem e visualização de cursos disponíveis
+    Sistema de matrícula de alunos em cursos
+    Controle de progresso de visualização de aulas
+    Painel de gerenciamento para professores
+    Sistema de upload e gerenciamento de conteúdo de aulas
+    
+    Contribuição
+    Para contribuir com o desenvolvimento do projeto:
+    
+    Faça um fork do repositório
+    Crie uma branch para sua funcionalidade
+    Implemente as alterações e testes correspondentes
+    Faça commit das alterações seguindo convenções claras
+    Envie um pull request para revisão
+    
+    Licença
+    Este projeto é desenvolvido como parte de um trabalho acadêmico para a disciplina de Linguagem de Programação II e está destinado ao uso educacional e desenvolvimento da plataforma Newbyte.
+    
+    Este README fornece uma visão completa e profissional do projeto, incluindo todas as informações necessárias para compreender sua estrutura, funcionalidades implementadas, tecnologias utilizadas e procedimentos para instalação e desenvolvimento. O documento está organizado de forma clara e estruturada, facilitando a compreensão tanto para desenvolvedores quanto para pessoas interessadas em estudar ou contribuir com o projeto.
+       
