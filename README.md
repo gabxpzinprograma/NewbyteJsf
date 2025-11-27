@@ -65,7 +65,7 @@ src/main/
 
 2. **Configuração**:
    # Clonar o repositório
-   git clone <URL_DO_REPOSITORIO>
+   git clone https://github.com/gabxpzinprograma/NewbyteJsf.git
    cd NewbyteJsf
 
    # Compilar e executar a aplicação
