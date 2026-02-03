@@ -17,7 +17,7 @@
                 <p>Você está logado como <strong>aluno</strong>.</p>
                 <p>Aqui você pode acessar seus cursos e continuar seus estudos.</p>
                 <h:form>
-                    <h:commandButton value="Meus Cursos" styleClass="btn btn-primary" />
+                    <a href="/cursos.xhtml">Meus Cursos</a>
                     <h:commandButton value="Logout" action="#{loginBean.logout()}" styleClass="btn btn-secondary" />
                 </h:form>
             </div>
@@ -25,12 +25,12 @@
 
         <h:panelGroup rendered="#{authenticationService.isProfessorLogado()}">
             <div class="card card-professor">
-                <h1>Bem-vindo, Professor #{authenticationService.getProfessorLogado().nome}!</h1>
+                <h1>Bem-vindo, #{authenticationService.getProfessorLogado().nome}!</h1>
                 <p>Você está logado como <strong>professor</strong>.</p>
                 <p>Gerencie seus cursos e publique novas aulas.</p>
                 <h:form>
-                    <h:commandButton value="Meus Cursos" styleClass="btn btn-primary" />
-                    <h:commandButton value="Nova Aula" styleClass="btn btn-primary" />
+                    <a href="/studio.xhtml">Minhas Aulas</a>
+                    <a href="/studio.xhtml">Nova Aula</a>
                     <h:commandButton value="Logout" action="#{professorLoginBean.logout()}" styleClass="btn btn-secondary" />
                 </h:form>
             </div>
@@ -38,8 +38,8 @@
 
         <h:panelGroup rendered="#{!authenticationService.isAlunoLogado() and !authenticationService.isProfessorLogado()}">
             <div class="card">
-                <h1>Bem-vindo!</h1>
-                <p>Faça login para continuar.</p>
+                <h1>Olá</h1>
+                <p>Use um dos botões abaixo para fazer login como aluno ou professor.</p>
                 <h:form>
                     <h:commandLink value="Login como Aluno" action="login.xhtml?faces-redirect=true" styleClass="btn btn-primary" />
                     <h:commandLink value="Login como Professor" action="professor-login.xhtml?faces-redirect=true" styleClass="btn btn-primary" />

@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `if0_36736128_newbytestore`
+-- CREATE DATABASE if0_36736128_newbytestore;
+USE if0_36736128_newbytestore;
 --
 
 -- --------------------------------------------------------

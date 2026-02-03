@@ -7,26 +7,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
-  --primary-color: #7a4af4;
-  --secondary-color: #6a3ecf;
-  --accent-color: #956afa;
-  --dark-bg: #212121;
-  --light-bg: #ffffff;
-  --text-primary: #333333;
-  --text-secondary: #555555;
-  --border-radius-sm: 8px;
-  --border-radius-md: 16px;
-  --border-radius-lg: 41px;
-  --border-radius-xl: 50px;
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
-  --primary-light: #9a6af8;
-  --text-muted: #94a3b8;
+    --primary-color: #7a4af4;
+    --secondary-color: #6a3ecf;
+    --accent-color: #956afa;
+    --dark-bg: #212121;
+    --light-bg: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #555555;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 41px;
+    --border-radius-xl: 50px;
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --primary-light: #9a6af8;
+    --text-muted: #94a3b8;
 }
 
 ::marker {
@@ -48,7 +49,7 @@ body {
     background: rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 870px;
-    padding: 32px; 
+    padding: 32px;
     border-radius: 16px;
     border: solid 5px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(25px);
@@ -57,8 +58,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; 
-    
+    gap: 10px;
+
     /* Your heart is pounding and it can't be stopped
     You tell yourself you're okay
     It's too bad your doors can't be locked
@@ -114,7 +115,7 @@ body {
     You'll never be alone again
     You'll never be alone*/
     max-height: 788px;
-} 
+}
 
 .login-title {
     margin-bottom: 24px;
@@ -165,7 +166,7 @@ body {
     transition: 0.25s;
 }
 
-.input-box input:focus + i {
+.input-box input:focus+i {
     color: white;
 }
 
@@ -277,40 +278,59 @@ a {
 
 
 .nav__uls {
-  position: fixed;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  border-radius: var(--border-radius-lg);
-  padding: 20px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  animation: slideInLeft 0.8s ease-out;
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-lg);
+    padding: 20px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideInLeft 0.8s ease-out;
 }
 
 .nav__uls .nav__lis {
-  margin: 15px 0;
-  padding: 10px;
-  border-radius: var(--border-radius-md);
-  transition: all var(--transition-normal);
-  cursor: pointer;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-normal);
+    cursor: pointer;
 }
 
 .nav__uls .nav__lis:hover {
-  background: rgba(122, 74, 244, 0.2);
-  transform: translateX(5px);
+    background: rgba(122, 74, 244, 0.2);
+    transform: translateX(5px);
 }
 
 .nav__uls .nav__lis img {
-  width: 24px;
-  height: 24px;
-  transition: all var(--transition-normal);
-  filter: brightness(0.8);
+    width: 24px;
+    height: 24px;
+    transition: all var(--transition-normal);
+    filter: brightness(0.8);
 }
 
 .nav__uls .nav__lis:hover img {
-  filter: brightness(1.2);
-  transform: scale(1.1);
+    filter: brightness(1.2);
+    transform: scale(1.1);
+}
+
+.professor-badge {
+    background: linear-gradient(45deg, #8a2be2, #ff1493);
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    background: rgba(138, 43, 226, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    border-left: 5px solid #8a2be2;
+    margin: 20px 0;
+    color: #ddd;
 }

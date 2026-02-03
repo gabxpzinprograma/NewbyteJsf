@@ -4,51 +4,28 @@
 <h:head>
     <title>NewByte - Cadastro Professor</title>
     <link rel="stylesheet" href="resources/ifba/styles/cadastro.css" />
-    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="resources/ifba/images/logo-removebg-preview.png" type="image/x-icon" />
-
-    <style>
-        .professor-badge {
-            background: linear-gradient(45deg, #8a2be2, #ff1493);
-            padding: 10px 20px;
-            border-radius: 50px;
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .info-box {
-            background: rgba(138, 43, 226, 0.2);
-            padding: 15px;
-            border-radius: 12px;
-            border-left: 5px solid #8a2be2;
-            margin: 20px 0;
-            color: #ddd;
-        }
-    </style>
 </h:head>
 
 <h:body>
-    <!-- Navbar padrão -->
     <ul class="nav__uls">
-        <a href="#{facesContext.externalContext.requestContextPath}/index.xhtml">
-            <li class="nav__lis"><img src="#{resource['ifba/images/home.png']}" /></li>
+        <a href="/index.xhtml">
+            <li class="nav__lis"><img src="./resources/ifba/images/home.png" /></li>
         </a>
-        <a href="#{facesContext.externalContext.requestContextPath}/cursos.xhtml">
-            <li class="nav__lis"><img src="#{resource['ifba/images/box.png']}" /></li>
+        <a href="/cursos.xhtml">
+            <li class="nav__lis"><img src="./resources/ifba/images/box.png" /></li>
         </a>
-        <a href="#{facesContext.externalContext.requestContextPath}/termos.xhtml">
-            <li class="nav__lis"><img src="#{resource['ifba/images/file.png']}" /></li>
+        <a href="/termos.xhtml">
+            <li class="nav__lis"><img src="./resources/ifba/images/file.png" /></li>
         </a>
-        <a href="#{facesContext.externalContext.requestContextPath}/contato.xhtml">
-            <li class="nav__lis"><img src="#{resource['ifba/images/phone.png']}" /></li>
+        <a href="/contato.xhtml">
+            <li class="nav__lis"><img src="./resources/ifba/images/phone.png" /></li>
         </a>
-        <a href="#{facesContext.externalContext.requestContextPath}/login.xhtml">
-            <li class="nav__lis"><img src="#{resource['ifba/images/user.png']}" /></li>
+        <a href="/login.xhtml">
+            <li class="nav__lis"><img src="./resources/ifba/images/user.png" /></li>
         </a>
-        <a href="#{facesContext.externalContext.requestContextPath}/faq.xhtml">
-            <li class="nav__lis"><img src="#{resource['ifba/images/question.png']}" /></li>
+        <a href="/faq.xhtml">
+            <li class="nav__lis"><img src="./resources/ifba/images/question.png" /></li>
         </a>
     </ul>
 

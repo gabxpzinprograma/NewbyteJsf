@@ -30,7 +30,7 @@ public class ProfessorCadastroBean {
         }
 
         if (professorRepository.findByEmail(email).isPresent()) {
-            addError("Este e-mail já está cadastrado como professor.");
+            addError("Este e-mail já é de um professor.");
             return null;
         }
 
@@ -41,8 +41,8 @@ public class ProfessorCadastroBean {
 
         professorRepository.save(novo);
 
-        addInfo("Cadastro realizado com sucesso!", 
-                "Sua conta será analisada e ativada em até 48h. Você será redirecionado para login.");
+        addInfo("Cadastro concluido",
+                "A Newbyte irá ativar sua conta em breve. Faça login");
 
         FacesContext.getCurrentInstance().getExternalContext().getFlash().setKeepMessages(true);
         return "/professor-login.xhtml?faces-redirect=true";
@@ -58,14 +58,43 @@ public class ProfessorCadastroBean {
                 new FacesMessage(FacesMessage.SEVERITY_INFO, titulo, msg));
     }
 
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-    public String getSenha() { return senha; }
-    public void setSenha(String senha) { this.senha = senha; }
-    public String getConfirmarSenha() { return confirmarSenha; }
-    public void setConfirmarSenha(String confirmarSenha) { this.confirmarSenha = confirmarSenha; }
-    public boolean getAceitoTermos() { return aceitoTermos; }
-    public void setAceitoTermos(boolean aceitoTermos) { this.aceitoTermos = aceitoTermos; }
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getConfirmarSenha() {
+        return confirmarSenha;
+    }
+
+    public void setConfirmarSenha(String confirmarSenha) {
+        this.confirmarSenha = confirmarSenha;
+    }
+
+    public boolean getAceitoTermos() {
+        return aceitoTermos;
+    }
+
+    public void setAceitoTermos(boolean aceitoTermos) {
+        this.aceitoTermos = aceitoTermos;
+    }
 }

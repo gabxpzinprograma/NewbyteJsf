@@ -1,15 +1,14 @@
 package com.example.ifbademo;
 
 import javax.faces.webapp.FacesServlet;
+import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletContext;
-
-import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.context.ServletContextAware;
- 
+import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import com.example.ifbademo.util.ViewScope;
 import com.google.common.collect.ImmutableMap;
 
@@ -29,13 +28,13 @@ public class Ifbademo_vespApplication implements ServletContextAware {
 
     @Bean
     ServletRegistrationBean<FacesServlet> servletRegistrationBean() {
-        ServletRegistrationBean<FacesServlet> servletRegistrationBean = new ServletRegistrationBean<>(
+        ServletRegistrationBean<FacesServlet> bean = new ServletRegistrationBean<>(
                 new FacesServlet(), "*.xhtml");
-        servletRegistrationBean.setLoadOnStartup(1);
-        return servletRegistrationBean;
+        bean.setLoadOnStartup(1);
+        bean.setMultipartConfig(new MultipartConfigElement("", 10485760, 10485760, 0));
+        return bean;
     }
 
-    @Override
     public void setServletContext(ServletContext servletContext) {
         servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
         servletContext.setInitParameter("javax.faces.FACELETS_SKIP_COMMENTS", "true");
