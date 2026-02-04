@@ -136,32 +136,45 @@
                 <svg class="curva-heroi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" preserveAspectRatio="xMidYMid meet">
                     <path d="M 550 250 Q 550 225 550 200 Q 675 200 750 200 L 750 450 Q 725 450 700 450 L 700 350 C 700 300 700 250 600 250 Z" fill="rgba(0, 0, 0, 1)"></path>
                 </svg>
-                <h:graphicImage library="ifba" name="images/newbyte-logo.webp" alt="logo newbyte" />
+                <h:graphicImage library="ifba" name="images/logo-removebg-preview.png" alt="logo newbyte" />
             </div>
         </div>
     </header>
     
     <!-- Secao 2 - Cursos -->
     <section id="secao2" class="secao2">
-        <div class="navegacao-esquerda">
-            <div class="cursos-container">
-                <ui:repeat value="#{homeBean.todosCursos}" var="curso" varStatus="status">
-                    <div class="curso #{status.index lt 3 ? '' : 'hidden'}" data-curso="#{curso.idCurso}" style="#{status.index ge 3 ? 'display: none;' : ''}">
-                        <h:graphicImage value="#{curso.imagem}" alt="#{curso.titulo}" styleClass="curso-imagem" />
-                        <div class="curso-info">
-                            <h3 class="curso-titulo"><h:outputText value="#{curso.titulo}" /></h3>
+        <div class="mexico">
+            <div class="navegacao-esquerda">
+                <div class="cursos-container">
+                    <ui:repeat value="#{homeBean.todosCursos}" var="curso" varStatus="status">
+                        <div class="curso #{status.index lt 3 ? '' : 'hidden'}" data-curso="#{curso.idCurso}" style="#{status.index ge 3 ? 'display: none;' : ''}">
+                            <div class="bg-black"></div>
+                            <span><h:outputText value="#{curso.titulo}" /></span>
                         </div>
-                    </div>
-                </ui:repeat>
-            </div>
-            <div id="alternar-cursos" class="alternar-cursos">
-                <i class="material-icons">keyboard_arrow_down</i>
+                    </ui:repeat>
+                </div>
+                <div id="alternar-cursos">
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </div>
             </div>
         </div>
         
         <div class="navegacao-direita">
-            <h:graphicImage id="curso-imagem" library="ifba" name="images/default-curso.png" alt="Imagem do curso" styleClass="curso-imagem-grande" />
-            <p class="texto1">Selecione um curso para ver mais detalhes.</p>
+            <div class="recipiente-botao">
+                <div class="flex flex-wrap w-5">
+                    <div class="item-grade rounded-full"></div>
+                    <div class="item-grade rounded-full"></div>
+                    <div class="item-grade rounded-full"></div>
+                    <div class="item-grade rounded-full"></div>
+                    <div class="item-grade rounded-full"></div>
+                    <div class="item-grade rounded-full"></div>
+                </div>
+            </div>
+            <div class="recipiente-interno">
+                <p class="texto1">Selecione um curso para ver mais detalhes.</p>
+            </div>
+            <div class="bola"></div>
+            <div class="circulo"></div>
         </div>
     </section>
     
@@ -195,28 +208,30 @@
     </h:panelGroup>
     
     <!-- Footer / Rodape -->
-    <footer class="rodape">
-        <div class="rodape-conteudo">
-            <div class="rodape-logo">
-                <h:graphicImage library="ifba" name="images/newbyte-logo.webp" alt="Newbyte Logo" />
+    <footer>
+        <div class="rodape1">
+            <div>
+                <p>Newbyte</p>
+                <p>Desafios transformados em oportunidades. Oferecemos cursos de tecnologia e programacao de alta qualidade para todos os niveis.</p>
+                <div class="icones-sociais">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
-            <div class="rodape-links">
-                <h3>Links Uteis</h3>
-                <ul>
-                    <li><a href="index.xhtml">Inicio</a></li>
-                    <li><a href="cursos.xhtml">Cursos</a></li>
-                    <li><a href="termos.xhtml">Termos de Uso</a></li>
-                    <li><a href="contato.xhtml">Contato</a></li>
-                </ul>
-            </div>
-            <div class="rodape-contato">
-                <h3>Contato</h3>
-                <p><i class="material-icons">email</i> contato@newbyte.com</p>
-                <p><i class="material-icons">phone</i> (71) 99999-9999</p>
+            <div>
+                <p>Links Uteis</p>
+                <p><a href="index.xhtml">Inicio</a></p>
+                <p><a href="cursos.xhtml">Cursos</a></p>
+                <p><a href="termos.xhtml">Termos de Uso</a></p>
+                <p><a href="contato.xhtml">Contato</a></p>
+                <p><a href="faq.xhtml">FAQ</a></p>
             </div>
         </div>
-        <div class="rodape-copyright">
+        <div class="rodape1-fundo">
             <p>Copyright 2024 Newbyte - Todos os direitos reservados.</p>
+            <div class="barra-roxa"></div>
         </div>
     </footer>
     

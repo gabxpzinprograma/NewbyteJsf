@@ -1,5 +1,9 @@
+// Animacao da secao 3 (cursos em andamento)
 document.addEventListener('DOMContentLoaded', () => {
     const section = document.querySelector('#secao3');
+    
+    if (!section) return;
+    
     let hasAnimated = false;
 
     function isElementInViewport(el) {
@@ -59,4 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', animateSection);
+    
+    // Verifica ao carregar a pagina tambem
+    animateSection();
 });

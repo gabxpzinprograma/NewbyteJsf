@@ -262,7 +262,7 @@ body {
 .cabecalho {
   position: relative;
   height: 100vh;
-  background-image: url("../images/fundo.webp");
+  background-image: url("../images/fundo.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2468,4 +2468,99 @@ main {
 
 .curso-menu:hover::before {
     left: 100%;
+}
+
+/* Estrutura da secao2 - Cursos */
+.navegacao-esquerda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.cursos-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+/* Estilos para a navegacao fixa inferior */
+.navegacao-lista-ul-item {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: var(--raio-borda-extra-grande);
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: var(--sombra-grande);
+}
+
+.navegacao-lista-ul-item a {
+    text-decoration: none;
+}
+
+.navegacao-item-lista {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    margin: 0 8px;
+    border-radius: 50%;
+    transition: all var(--transicao-normal);
+    cursor: pointer;
+}
+
+.navegacao-item-lista:hover {
+    background: rgba(122, 74, 244, 0.3);
+    transform: scale(1.1);
+}
+
+.navegacao-item-lista i.material-icons {
+    color: white;
+    font-size: 24px;
+}
+
+.navegacao-item-lista .user-initial {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Estilos do usuario inicial no header */
+.navegacao-item-li .user-initial {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* Material Icons no header */
+.navegacao-item-li i.material-icons {
+    color: white;
+    font-size: 20px;
+    transition: all var(--transicao-normal);
+}
+
+.navegacao-item-li:hover i.material-icons {
+    transform: scale(1.1);
 }
