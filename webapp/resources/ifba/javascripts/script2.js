@@ -161,7 +161,8 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             const cursoId = this.getAttribute("data-curso");
 
-            fetch(`get_curso.php?id_curso=${cursoId}`)
+            // Usando a API REST Java (equivalente ao get_curso.php)
+            fetch(`${window.location.origin}/api/curso?id_curso=${cursoId}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data && data.conteudo && data.imagem) {
@@ -176,11 +177,11 @@ document.addEventListener("DOMContentLoaded", function () {
                             texto.innerText = conteudo;
                         }
                     } else {
-                        console.log("Conteúdo do curso não encontrado");
+                        console.log("Conteudo do curso nao encontrado");
                     }
                 })
                 .catch(err => {
-                    console.error("Erro na requisição:", err);
+                    console.error("Erro na requisicao:", err);
                 });
         });
     });

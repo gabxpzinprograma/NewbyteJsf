@@ -1,52 +1,229 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
+<html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      lang="pt-br">
+
 <h:head>
-    <title>Index - Bem-vindo</title>
-    <h:outputStylesheet library="ifba" name="styles/styles.css" />
-    <link rel="shortcut icon" href="resources/ifba/images/logo-removebg-preview.png" type="image/x-icon" />
-
+    <f:facet name="first">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </f:facet>
+    
+    <title>Newbyte - Inicio</title>
+    <meta name="description" content="Newbyte oferece solucoes em tecnologia, cursos de informatica e programacao de qualidade, com foco em inovacao e aprendizado para todos os niveis." />
+    <meta name="keywords" content="NewByte, Nbyte, Nvyte, cursos de tecnologia, cursos de programacao, cursos de informatica, cursos online, solucoes em tecnologia, cursos bons, cursos de qualidade, aprender programacao, aprender informatica, cursos para iniciantes, cursos para avancados, cursos de informatica gratuitos, NewByte cursos, Newbyte programacao, Nbyte cursos, Nvyte cursos, cursos de tecnologia para todos os niveis" />
+    <meta name="author" content="NewByte - Inovacao e Aprendizado" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NewByte - Inicio" />
+    <meta property="og:description" content="Aprenda programacao, informatica e muito mais com os cursos da NewByte, com o melhor conteudo online e especializado." />
+    <meta property="og:image" content="images/logo-removebg-preview.png" />
+    <meta property="og:url" content="https://newbyte.free.nf/" />
+    <link rel="canonical" href="https://newbyte.free.nf/" />
+    
+    <h:outputStylesheet library="ifba" name="styles/style.css" />
+    <link rel="shortcut icon" href="#{resource['ifba:images/logo-removebg-preview.png']}" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ07T3ldRk65jmnHVsx8P17aMjn3kh8wFQXdu8oNjWn1vYO7dKtB8bIje3rA" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </h:head>
+
 <h:body>
-    <div class="container">
-        
-        <h:panelGroup rendered="#{authenticationService.isAlunoLogado()}">
-            <div class="card card-aluno">
-                <h1>Bem-vindo, #{authenticationService.getAlunoLogado().nome}!</h1>
-                <p>Você está logado como <strong>aluno</strong>.</p>
-                <p>Aqui você pode acessar seus cursos e continuar seus estudos.</p>
-                <h:form>
-                    <a href="/cursos.xhtml">Meus Cursos</a>
-                    <h:commandButton value="Logout" action="#{loginBean.logout()}" styleClass="btn btn-secondary" />
-                </h:form>
-            </div>
-        </h:panelGroup>
-
-        <h:panelGroup rendered="#{authenticationService.isProfessorLogado()}">
-            <div class="card card-professor">
-                <h1>Bem-vindo, #{authenticationService.getProfessorLogado().nome}!</h1>
-                <p>Você está logado como <strong>professor</strong>.</p>
-                <p>Gerencie seus cursos e publique novas aulas.</p>
-                <h:form>
-                    <a href="/studio.xhtml">Minhas Aulas</a>
-                    <a href="/studio.xhtml">Nova Aula</a>
-                    <h:commandButton value="Logout" action="#{professorLoginBean.logout()}" styleClass="btn btn-secondary" />
-                </h:form>
-            </div>
-        </h:panelGroup>
-
-        <h:panelGroup rendered="#{!authenticationService.isAlunoLogado() and !authenticationService.isProfessorLogado()}">
-            <div class="card">
-                <h1>Olá</h1>
-                <p>Use um dos botões abaixo para fazer login como aluno ou professor.</p>
-                <h:form>
-                    <h:commandLink value="Login como Aluno" action="login.xhtml?faces-redirect=true" styleClass="btn btn-primary" />
-                    <h:commandLink value="Login como Professor" action="professor-login.xhtml?faces-redirect=true" styleClass="btn btn-primary" />
-                </h:form>
-            </div>
-        </h:panelGroup>
-
+    <!-- Menu Cortina -->
+    <div class="menu-cortina">
+        <ul class="menu-cortina-lista">
+            <ui:repeat value="#{homeBean.todosCursos}" var="curso">
+                <li class="curso-menu" data-curso-id="#{curso.idCurso}">
+                    <h:outputText value="#{curso.titulo}" />
+                </li>
+            </ui:repeat>
+        </ul>
     </div>
+    
+    <!-- Pre-carregador -->
+    <div id="pre-carregador">
+        <div class="cartao">
+            <div class="carregador">
+                <p>Carregando</p>
+                <div class="palavras">
+                    <span class="palavra">botoes</span>
+                    <span class="palavra">texto</span>
+                    <span class="palavra">imagens</span>
+                    <span class="palavra">cards</span>
+                    <span class="palavra">botoes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navegacao Lista UL Item (aparece no scroll) -->
+    <ul class="navegacao-lista-ul-item">
+        <a href="index.xhtml"><li class="navegacao-item-lista"><i class="material-icons w-5">home</i></li></a>
+        <a href="cursos.xhtml"><li class="navegacao-item-lista"><i class="material-icons w-5">school</i></li></a>
+        <a href="termos.xhtml"><li class="navegacao-item-lista"><i class="material-icons w-5">description</i></li></a>
+        <a href="contato.xhtml"><li class="navegacao-item-lista"><i class="material-icons w-5">phone</i></li></a>
+        <a href="login.xhtml">
+            <li class="navegacao-item-lista">
+                <h:panelGroup rendered="#{homeBean.logado and homeBean.alunoLogado.nome ne null}">
+                    <span class="user-initial">
+                        <h:outputText value="#{homeBean.alunoLogado.nome.substring(0, 1).toUpperCase()}" />
+                    </span>
+                </h:panelGroup>
+                <h:panelGroup rendered="#{!homeBean.logado or homeBean.alunoLogado.nome eq null}">
+                    <i class="material-icons w-5">person</i>
+                </h:panelGroup>
+            </li>
+        </a>
+        <a href="faq.xhtml"><li class="navegacao-item-lista"><i class="material-icons w-5">help_outline</i></li></a>
+    </ul>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nav = document.querySelector('.navegacao-lista-ul-item');
+            const header = document.querySelector('.cabecalho');
+            const checkScroll = () => {
+                const headerHeight = header.offsetHeight;
+                const scrollPosition = window.scrollY;
+                nav.style.display = scrollPosition &lt; headerHeight ? 'none' : 'flex';
+            };
+            checkScroll();
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
+    
+    <!-- Header / Cabecalho -->
+    <header class="cabecalho">
+        <svg class="curva-navegacao" width="700" height="400" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 100 250 Q 100 250 100 200 Q 375 200 570 200 C 580 240 700 200 700 250 Z" fill="#7A4AF4" />
+        </svg>
+        <nav class="navegacao-cabecalho">
+            <ul class="navegacao-lista-ul">
+                <a href="index.xhtml"><li class="navegacao-item-li"><i class="material-icons">home</i></li></a>
+                <a href="cursos.xhtml"><li class="navegacao-item-li"><i class="material-icons">school</i></li></a>
+                <a href="termos.xhtml"><li class="navegacao-item-li"><i class="material-icons">description</i></li></a>
+                <a href="contato.xhtml"><li class="navegacao-item-li"><i class="material-icons">phone</i></li></a>
+                <a href="login.xhtml">
+                    <li class="navegacao-item-li">
+                        <h:panelGroup rendered="#{homeBean.logado and homeBean.alunoLogado.nome ne null}">
+                            <span class="user-initial">
+                                <h:outputText value="#{homeBean.alunoLogado.nome.substring(0, 1).toUpperCase()}" />
+                            </span>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{!homeBean.logado or homeBean.alunoLogado.nome eq null}">
+                            <i class="material-icons">person</i>
+                        </h:panelGroup>
+                    </li>
+                </a>
+                <a href="faq.xhtml"><li class="navegacao-item-li"><i class="material-icons">help_outline</i></li></a>
+            </ul>
+            <div class="item-menu">
+                <i class="material-icons">menu</i>
+            </div>
+        </nav>
+        
+        <div class="heroi">
+            <div class="recipiente-chamada">
+                <h1>Newbyte</h1>
+                <p>Desafios transformados em oportunidades.</p>
+            </div>
+            <div class="recipiente-logo">
+                <svg class="curva-heroi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" preserveAspectRatio="xMidYMid meet">
+                    <path d="M 550 250 Q 550 225 550 200 Q 675 200 750 200 L 750 450 Q 725 450 700 450 L 700 350 C 700 300 700 250 600 250 Z" fill="rgba(0, 0, 0, 1)"></path>
+                </svg>
+                <h:graphicImage library="ifba" name="images/newbyte-logo.webp" alt="logo newbyte" />
+            </div>
+        </div>
+    </header>
+    
+    <!-- Secao 2 - Cursos -->
+    <section id="secao2" class="secao2">
+        <div class="navegacao-esquerda">
+            <div class="cursos-container">
+                <ui:repeat value="#{homeBean.todosCursos}" var="curso" varStatus="status">
+                    <div class="curso #{status.index lt 3 ? '' : 'hidden'}" data-curso="#{curso.idCurso}" style="#{status.index ge 3 ? 'display: none;' : ''}">
+                        <h:graphicImage value="#{curso.imagem}" alt="#{curso.titulo}" styleClass="curso-imagem" />
+                        <div class="curso-info">
+                            <h3 class="curso-titulo"><h:outputText value="#{curso.titulo}" /></h3>
+                        </div>
+                    </div>
+                </ui:repeat>
+            </div>
+            <div id="alternar-cursos" class="alternar-cursos">
+                <i class="material-icons">keyboard_arrow_down</i>
+            </div>
+        </div>
+        
+        <div class="navegacao-direita">
+            <h:graphicImage id="curso-imagem" library="ifba" name="images/default-curso.png" alt="Imagem do curso" styleClass="curso-imagem-grande" />
+            <p class="texto1">Selecione um curso para ver mais detalhes.</p>
+        </div>
+    </section>
+    
+    <!-- Secao 3 - Cursos em Andamento (apenas se logado) -->
+    <h:panelGroup rendered="#{homeBean.logado and not empty homeBean.cursosEmProgresso}">
+        <section id="secao3" class="secao3">
+            <div class="retangulo">
+                <div class="lado-esquerdo">
+                    <h2>Seus Cursos em Andamento</h2>
+                </div>
+                <div class="linha-vertical"></div>
+                <div class="lado-direito">
+                    <div class="cursos-em-andamento">
+                        <ui:repeat value="#{homeBean.cursosEmProgresso}" var="cursoProgresso">
+                            <div class="curso-andamento-card">
+                                <h:graphicImage value="#{cursoProgresso.curso.imagem}" alt="#{cursoProgresso.curso.titulo}" styleClass="curso-andamento-imagem" />
+                                <div class="curso-andamento-info">
+                                    <h4><h:outputText value="#{cursoProgresso.curso.titulo}" /></h4>
+                                    <div class="progresso-bar">
+                                        <div class="progresso-fill" style="width: #{cursoProgresso.progresso}%;"></div>
+                                    </div>
+                                    <span class="progresso-texto"><h:outputText value="#{cursoProgresso.progresso}" />% concluido</span>
+                                </div>
+                            </div>
+                        </ui:repeat>
+                    </div>
+                </div>
+                <div class="meio-circulo"></div>
+            </div>
+        </section>
+    </h:panelGroup>
+    
+    <!-- Footer / Rodape -->
+    <footer class="rodape">
+        <div class="rodape-conteudo">
+            <div class="rodape-logo">
+                <h:graphicImage library="ifba" name="images/newbyte-logo.webp" alt="Newbyte Logo" />
+            </div>
+            <div class="rodape-links">
+                <h3>Links Uteis</h3>
+                <ul>
+                    <li><a href="index.xhtml">Inicio</a></li>
+                    <li><a href="cursos.xhtml">Cursos</a></li>
+                    <li><a href="termos.xhtml">Termos de Uso</a></li>
+                    <li><a href="contato.xhtml">Contato</a></li>
+                </ul>
+            </div>
+            <div class="rodape-contato">
+                <h3>Contato</h3>
+                <p><i class="material-icons">email</i> contato@newbyte.com</p>
+                <p><i class="material-icons">phone</i> (71) 99999-9999</p>
+            </div>
+        </div>
+        <div class="rodape-copyright">
+            <p>Copyright 2024 Newbyte - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <h:outputScript library="ifba" name="javascripts/script.js" target="body" />
+    <h:outputScript library="ifba" name="javascripts/script2.js" target="body" />
+    <h:outputScript library="ifba" name="javascripts/script3.js" target="body" />
+
 </h:body>
 </html>
